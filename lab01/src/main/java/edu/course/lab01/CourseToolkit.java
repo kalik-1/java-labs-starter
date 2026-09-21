@@ -17,11 +17,11 @@ public final class CourseToolkit {
     }
 
     public static boolean isPrime(int number) {
-        if(number < 3)
+        if(number < 2)
         {
             return false;
         }
-        for(int i = 2; i <= (((int) (Math.sqrt(number))) + 1); i++)
+        for(int i = 2; i < (((int) (Math.sqrt(number))) + 1); i++)
         {
             if (number % i == 0)
             {
@@ -52,4 +52,18 @@ public final class CourseToolkit {
             }
     }
 
+    public static double average(int[] values) {
+        if (values == null || values.length == 0)
+        {
+            throw new IllegalArgumentException("Array must be not null or have more than 0 digits");
+        }
+        int sum = 0;
+        int count = 0;
+        for(int i = 0; i < values.length; i++)
+        {
+            sum += values[i];
+            count++;
+        }
+        return(sum / count);
+    }
 }

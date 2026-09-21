@@ -2,6 +2,7 @@ package edu.course.lab01;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -38,7 +39,7 @@ class CourseToolkitTest {
     
     @Test
     void returnsTrueForSingleDigitPrimes() {
-        boolean result = CourseToolkit.isPrime(7);
+        boolean result = CourseToolkit.isPrime(2);
 
         assertTrue(result);
     }
@@ -52,7 +53,7 @@ class CourseToolkitTest {
 
     @Test
     void returnsFalseForNonPrimals() {
-        boolean result = CourseToolkit.isPrime(64);
+        boolean result = CourseToolkit.isPrime(169);
 
         assertFalse(result);
     }
@@ -86,9 +87,37 @@ class CourseToolkitTest {
     }
 
     @Test
-    void throwsErrorForNull() {
+    void throwsExceptionForNull() {
         boolean result = CourseToolkit.isPalindrome(null);
         //Заглушка
         assertTrue(result);
+    }
+
+    @Test 
+    void returnsAverageForArrayOfNumbers() {
+        double result = CourseToolkit.average(new int[] {1, 2, 3});
+
+        assertEquals(result, 2);
+    }
+
+    @Test 
+    void returnsAverageForOneNumber() {
+        double result = CourseToolkit.average(new int[] {6});
+
+        assertEquals(result, 6);
+    }
+
+    @Test 
+    void throwsExceptionForEmptyArray() {
+        double result = CourseToolkit.average(new int[] {});
+
+        assertEquals(result, 2);
+    }
+
+    @Test 
+    void throwsExceptionForNullArray() {
+        double result = CourseToolkit.average(null);
+
+        assertEquals(result, 2);
     }
 }
