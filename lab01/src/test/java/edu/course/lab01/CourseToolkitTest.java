@@ -63,4 +63,32 @@ class CourseToolkitTest {
 
         assertFalse(result);
     }
+
+    @Test
+    void returnsTrueForPalindromeSingleDigit() {
+        boolean result = CourseToolkit.isPalindrome("1");
+
+        assertTrue(result);
+    }
+
+    @Test
+    void returnsTrueForPalindromeMultiDigit() {
+        boolean result = CourseToolkit.isPalindrome("1221");
+
+        assertTrue(result);
+    }
+
+    @Test
+    void returnsFalseForNonPalindrome() {
+        boolean result = CourseToolkit.isPalindrome("1234");
+
+        assertFalse(result);
+    }
+
+    @Test
+    void throwsErrorForNull() {
+        boolean result = CourseToolkit.isPalindrome(null);
+        //Заглушка
+        assertTrue(result);
+    }
 }

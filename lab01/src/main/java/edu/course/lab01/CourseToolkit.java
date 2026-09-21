@@ -31,4 +31,25 @@ public final class CourseToolkit {
         return true;
     }
 
+    public static boolean isPalindrome(String text) {
+        if (text == null)
+        {
+            throw new IllegalArgumentException("Text must be of string and not null");
+        }
+        String text_reverse = "";
+        String text_actual = text;
+        for(int i = text.length() - 1; i >= 0; i--)
+            {
+                text_reverse += text.charAt(i);
+            }
+        if(text_reverse.equals(text_actual))
+            {
+                return true;
+            }
+        else
+            {
+                return false;
+            }
+    }
+
 }
