@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import org.junit.jupiter.api.Disabled;
 
@@ -39,6 +41,28 @@ class CourseToolkitTest {
         assertTrue(result);
     }
     
+    //Простые числа
+
+    //Параметрический тест с использованием csv для удобства
+    @ParameterizedTest()
+    @CsvSource({
+        "-5, false",
+        "0, false",
+        "1, false",
+
+        "2, true",
+        "3, true",
+        "13, true",
+
+        "4, false",
+        "49, false",
+        "64, false"
+    })
+    void multiplePrimesParameterizedTest(int number, boolean resultExpected) {
+        boolean result = CourseToolkit.isPrime(number);
+        assertEquals(resultExpected, result);
+    }
+
     @Test
     void returnsTrueForSingleDigitPrimes() {
         boolean result = CourseToolkit.isPrime(2);
@@ -66,6 +90,8 @@ class CourseToolkitTest {
 
         assertFalse(result);
     }
+
+    //Палиндромы 
 
     @Test
     void returnsTrueForPalindromeSingleDigit() {
@@ -96,6 +122,7 @@ class CourseToolkitTest {
         assertTrue(result);
     }
     
+    //Среднее арифметическое 
 
     @Test 
     void returnsAverageForArrayOfNumbers() {
