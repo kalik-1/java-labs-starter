@@ -59,8 +59,8 @@ class CourseToolkitTest {
     }
 
     @Test
-    void returnsFalseForLessThanThree() {
-        boolean result = CourseToolkit.isPrime(2);
+    void returnsFalseForLessThanTwo() {
+        boolean result = CourseToolkit.isPrime(1);
 
         assertFalse(result);
     }
