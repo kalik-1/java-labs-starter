@@ -20,4 +20,20 @@ class CourseToolkitTest {
 
         assertFalse(result);
     }
+
+
+    @Test 
+    void returnsTrueForZero() {
+        boolean result = CourseToolkit.isEven(0);
+
+        assertTrue(result);
+    }
+
+    @Test 
+    void returnsTrueForNegativeEvenNumber() {
+        boolean result = CourseToolkit.isEven(8);
+
+        assertTrue(result);
+    }
+    
 }
