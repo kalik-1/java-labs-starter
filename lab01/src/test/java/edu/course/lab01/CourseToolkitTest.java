@@ -36,4 +36,31 @@ class CourseToolkitTest {
         assertTrue(result);
     }
     
+    @Test
+    void returnsTrueForSingleDigitPrimes() {
+        boolean result = CourseToolkit.isPrime(7);
+
+        assertTrue(result);
+    }
+
+    @Test
+    void returnsTrueForMultiDigitPrimes() {
+        boolean result = CourseToolkit.isPrime(13);
+
+        assertTrue(result);
+    }
+
+    @Test
+    void returnsFalseForNonPrimals() {
+        boolean result = CourseToolkit.isPrime(64);
+
+        assertFalse(result);
+    }
+
+    @Test
+    void returnsFalseForLessThanThree() {
+        boolean result = CourseToolkit.isPrime(2);
+
+        assertFalse(result);
+    }
 }

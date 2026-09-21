@@ -16,4 +16,19 @@ public final class CourseToolkit {
         return number % 2 == 0;
     }
 
+    public static boolean isPrime(int number) {
+        if(number < 3)
+        {
+            return false;
+        }
+        for(int i = 2; i <= (((int) (Math.sqrt(number))) + 1); i++)
+        {
+            if (number % i == 0)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
