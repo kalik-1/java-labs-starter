@@ -1,4 +1,5 @@
 package edu.course.lab01;
+import java.util.Optional;
 
 /**
  * Небольшие методы для первой лабораторной работы.
@@ -52,14 +53,14 @@ public final class CourseToolkit {
             }
     }
 
-    public static double average(int[] values) {
+    public static double average(int[] values, Optional<Integer> min, Optional<Integer> max) {
         if (values == null || values.length == 0)
         {
             throw new IllegalArgumentException("Array must be not null or have more than 0 digits");
         }
         int sum = 0;
         int count = 0;
-        for(int i = 0; i < values.length; i++)
+        for(int i = min.orElse(0); i < max.orElse(values.length); i++)
         {
             sum += values[i];
             count++;

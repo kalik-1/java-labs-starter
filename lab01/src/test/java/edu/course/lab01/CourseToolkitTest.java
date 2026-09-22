@@ -5,6 +5,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.Optional;
+
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -126,14 +129,14 @@ class CourseToolkitTest {
 
     @Test 
     void returnsAverageForArrayOfNumbers() {
-        double result = CourseToolkit.average(new int[] {1, 2, 3});
+        double result = CourseToolkit.average(new int[] {1, 2, 3, 4, 5}, Optional.of(0), Optional.of(3));
 
         assertEquals(result, 2);
     }
 
     @Test 
     void returnsAverageForOneNumber() {
-        double result = CourseToolkit.average(new int[] {6});
+        double result = CourseToolkit.average(new int[] {6}, Optional.empty(), Optional.empty());
 
         assertEquals(result, 6);
     }
@@ -141,7 +144,7 @@ class CourseToolkitTest {
     @Disabled ("Тест создан чтобы намеренно падать и не должен мешать билду")
     @Test 
     void throwsExceptionForEmptyArray() {
-        double result = CourseToolkit.average(new int[] {});
+        double result = CourseToolkit.average(new int[] {}, Optional.empty(), Optional.empty());
 
         assertEquals(result, 2);
     }
@@ -150,7 +153,7 @@ class CourseToolkitTest {
     @Disabled ("Тест создан чтобы намеренно падать и не должен мешать билду")
     @Test 
     void throwsExceptionForNullArray() {
-        double result = CourseToolkit.average(null);
+        double result = CourseToolkit.average(null, Optional.empty(), Optional.empty());
 
         assertEquals(result, 2);
     }
