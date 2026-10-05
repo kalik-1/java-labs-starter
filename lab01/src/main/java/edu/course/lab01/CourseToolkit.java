@@ -43,14 +43,8 @@ public final class CourseToolkit {
             {
                 text_reverse += text.charAt(i);
             }
-        if(text_reverse.equals(text_actual))
-            {
-                return true;
-            }
-        else
-            {
-                return false;
-            }
+        return text_reverse.equals(text_actual);
+        
     }
 
     public static double average(int[] values, Optional<Integer> min, Optional<Integer> max) {
@@ -65,6 +59,6 @@ public final class CourseToolkit {
             sum += values[i];
             count++;
         }
-        return(sum / count);
+        return((double) sum / count);
     }
 }

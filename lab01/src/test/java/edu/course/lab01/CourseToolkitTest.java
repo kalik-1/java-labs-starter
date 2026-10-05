@@ -1,17 +1,23 @@
 package edu.course.lab01;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestFactory;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import org.junit.jupiter.api.Disabled;
+
+import java.util.Scanner;
 
 class CourseToolkitTest {
 
@@ -157,5 +163,57 @@ class CourseToolkitTest {
 
         assertEquals(result, 2);
     }
+    
+    /* 
+    @Test
+    void runSmallCLI() {
+        Scanner cli = new Scanner(System.in);
+        boolean isRunning = true;
+        System.out.println("///CLI INITIALIZED///");
+        System.out.println("Input New Line: ");
+        while(isRunning) {
+            System.out.print("\ncli> ");
+            if(!cli.hasNextLine()) {
+                break;
+            }
+
+            String cliInput = cli.nextLine().trim();
+
+            if(cliInput.isEmpty()) {
+                continue;
+            }
+
+            String[] parseCLIInput = cliInput.split("\\s+");
+            System.out.println(parseCLIInput);
+            String command = parseCLIInput[0].toLowerCase();
+            String assertedResult = parseCLIInput[(parseCLIInput.length - 1)];
+            
+            switch (command) {
+                case "prime":
+                    String numberToCheck = parseCLIInput[1];
+                    boolean resultForPrime = CourseToolkit.isPrime(Integer.parseInt(numberToCheck));
+                    System.out.println("Результат проверки на простоту: " + resultForPrime + "Ожидаемый результат: " + assertedResult);
+                    break;
+            
+                case "palindrome":
+                    String stringToCheck = parseCLIInput[1];
+                    boolean resultForPalindrome = CourseToolkit.isPalindrome(stringToCheck);
+                    System.out.println("Результат проверки на простоту: " + resultForPalindrome + "Ожидаемый результат: " + assertedResult);
+                    break;
+
+                case "average":
+                    String[] data = Arrays.copyOfRange(parseCLIInput, 1, parseCLIInput.length - 1);
+                    int[] dataToInt = new int[data.length];
+
+                    for(int i = 0; i < data.length; i++) {
+                        dataToInt[i] = Integer.parseInt(data[i]);
+                    }
+                    double result = CourseToolkit.average(dataToInt, Optional.empty(), Optional.empty());
+                    System.out.println("Результат проверки на простоту: " + result + "Ожидаемые результат: " + assertedResult);
+                    break;
+            }
+        }
+    }
+    */
     
 }
