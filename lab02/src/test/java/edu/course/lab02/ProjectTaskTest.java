@@ -8,6 +8,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.Disabled;
+
 import static edu.course.lab02.ProjectTask.TaskStatus;
 
 
@@ -34,12 +36,12 @@ public class ProjectTaskTest {
         assertEquals(exampleTask1.estimatedHours, 24);
     }
 
-    /* 
+    @Disabled 
     @Test
     void ThrowsErrorOnNegativeCompletionHours() {
         exampleTask2.reEstimateCompletionHours(-16);
     }
-    */
+    
 
     @Test
     void TaskInfoChangesCorrectly() {

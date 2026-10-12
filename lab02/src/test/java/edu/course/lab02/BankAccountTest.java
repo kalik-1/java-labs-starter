@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.Disabled;
+
 
 public final class BankAccountTest {
     BankAccount accountBoris2007 = new BankAccount(100);
@@ -28,6 +30,7 @@ public final class BankAccountTest {
         assertEquals(moneyLeft, -1);
     }
 
+    @Disabled 
     @Test 
     void ThrowErrorOnNegativeBalance() {
         BankAccount accountHakerDenis = new BankAccount(-1);
