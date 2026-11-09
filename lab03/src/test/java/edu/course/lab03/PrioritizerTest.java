@@ -5,13 +5,14 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PrioritizerTest {
+    //Задачи
     ProjectTask task1 = new ProjectTask("1", "buy kolbasi", 1);
     ProjectTask task2 = new ProjectTask("2", "bake pizza", 48);
     ProjectTask task3 = new ProjectTask("3", "fork nginx form scratch", 1000);
-
+    //Политика приоритизации
     EffortPriorityPolicy compByEffort = new EffortPriorityPolicy();
     StatusPriorityPolicy compByStatus = new StatusPriorityPolicy();
-
+    //Приоритизатор
     TaskPrioritizer managerOleg = new TaskPrioritizer(compByEffort);
     
     @Test 

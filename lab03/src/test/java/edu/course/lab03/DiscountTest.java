@@ -5,13 +5,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DiscountTest {
-    // Товар
+    //Цена товара
     double pantsPrice = 300.0; 
-    // Политика скидок
+    //Политика скидок
     DiscountPolicy blekFriday = new PercentDiscount(33);
     DiscountPolicy whitFriday = new PercentDiscount(1);
     DiscountPolicy regularFriday = new NoDiscount();
-    //Калькулятор
+    //Класс
     PriceCalculator priceCalculator = new PriceCalculator(regularFriday);
 
     @Test 
